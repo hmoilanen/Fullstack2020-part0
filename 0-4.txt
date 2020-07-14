@@ -1,0 +1,49 @@
+Link:
+https://www.websequencediagrams.com/cgi-bin/cdraw?lz=dGl0bGUgRnVsbHN0YWNrIDIwMjAgLSBwYXJ0MC40Cgpub3RlIG92ZXIgYnJvd3NlcjoKQSB1c2VyIHR5cGVzICJBIE5FVyBOT1RFIiB1c2luZyBodG1sIGlucHV0IGVsZW1lbnQKYW5kIGNsaWNrcyBzdWJtaXQgYnV0dG9uIHdoaWNoAA0HcyB0aGUgCnJlbGF0ZWQgZm9ybS4KZW5kIG5vdGUKCgB5By0-c2VydmVyOiBIVFRQIFBPU1QgaHR0cHM6Ly9mAIE_CC1leGFtcGxlYXBwLmhlcm9rdWFwcC5jb20vbmV3XwBKBgCBUAoASgcKV2hlbgBHBSByZXF1ZXN0IGlzIGhhbmRsZWQgc3VjY2VzZnVsbHkgKG9yIGhhcyAKZmFpbGVkKQA7ByBzZW5kcyByZXNwb25zZSBiYWNrIHRvAIIyCACBQQwAgT4GLS0-AIJOCAAtCQCCXhVCAIJ2BiByZWNlaXZlAIIkBgBeCmVoYXZlcyBhY2NvcmRpbmdseS4KaWYgdGhpbmdzIGhhcHBlbmVkIGFzIHN1cHBvc2VkIChpbiB0aGlzIGNhc2UgCgCCRwVzdGF0dXMgY29kZSAzMDIgaXMAaQhkIG1lYW5pbmcgClVSTCByZWRpcmVjdCBhbmQgaXQgbWFrAIENB3BhZ2UgdG8gcmVsb2FkKS4KV2hhdAB7B3MgaXMgYmFzZWQgAIN1BWF0AINsBQCCNQdpAHMGZAp0byBkbyAoY291bGQgYWxzbyBlZy4gcmV0dXJuAIQdBXVwZACEHAVKU09OKQCEACJHRQCDcy5vdGVzAIMNE0hUTUwtY29kZQAhRm1haW4uY3MAVhQAEgkAH0pqAE8ZanMAhFQdc3RhcnRzIGV4ZWN1dGluZyBqcwCCAAUgdGhhdCAKAIYhB3MAgwcNIGRhdGEgZnJvbQCGUwcAglNRZGF0YS5qc29uAIY1E1t7IGNvbnRlbnQ6AIkQDSwgZGF0ZTogIjIwWFgtWFgtWFgiIH0sIC4uLl0AhlcdAIF2BgCGbQdldmVudACIDQdyCgCCAAVyZW5kZXJzAIkhBXMgKG5ldyArIG9sZCkgdG8gZGlzcGxheQCJPgo&s=default
+
+Code:
+title Fullstack 2020 - part0.4
+
+note over browser:
+A user types "A NEW NOTE" using html input element
+and clicks submit button which submits the 
+related form.
+end note
+
+browser->server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note
+
+note over server:
+When http request is handled succesfully (or has 
+failed) server sends response back to browser.
+end note
+
+server-->browser: response
+
+note over browser:
+Browser receives the response behaves accordingly.
+if things happened as supposed (in this case 
+HTTP status code 302 is received meaning 
+URL redirect and it makes the page to reload).
+What happens is based on what the server is coded
+to do (could also eg. return the updated JSON).
+end note
+
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/notes
+server-->browser: HTML-code
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.css
+server-->browser: main.css
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.js
+server-->browser: main.js
+
+note over browser:
+Browser starts executing js-code that 
+requests updated JSON data from server.
+end note
+
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/data.json
+server-->browser: [{ content: "A NEW NOTE", date: "20XX-XX-XX" }, ...]
+
+note over browser:
+Browser executes the event handler
+that renders notes (new + old) to display.
+end note

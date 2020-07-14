@@ -1,0 +1,37 @@
+Link:
+https://www.websequencediagrams.com/cgi-bin/cdraw?lz=dGl0bGUgRnVsbHN0YWNrIDIwMjAgLSBwYXJ0MC41Cgpub3RlIG92ZXIgYnJvd3NlcjoKQSB1c2VyIHR5cGVzIHRoZSBVUkwgYW5kABoIIHNlbmRzCkhUVFAgR0VULgplbmQgbm90ZQoKAD0HLT5zZXJ2ZXI6IAAgBVBPU1QgaHR0cHM6Ly9mAIEDCC1leGFtcGxlYXBwLmhlcm9rdWFwcC5jb20vc3BhCgA7Bi0tPgCBDwggcmVzcG9uc2UAgR8VQgCBFAdyZWNlaXZlcyBvbmUgaW5kZXguaHRtbCBpbnN0ZWFkIG9mCmdldHRpbmcgaW5kaXZpZHVhbCBIVE1MIGZpbGUgZm9yIGV2ZXJ5IHBhZ2UAgTkiR0UAgRdDSFRNTC1jb2RlAB9GbWFpbi5jc3MAgjETABIJAIEGSC5qAFMUABIHAIMNHHN0YXJ0cyBleGVjdQCDCgVqcwCBfgUgdGhhdCAKcmVxdWVzdHMgdXBkYXRlZCBKU09OIGRhdGEgZnJvbSAAhFoGAIJPUWRhdGEuanNvbgCEbRNbeyBjb250ZW50OiAiQSBOT1RFIiwgZGF0ZTogIjIwWFgtWFgtWFgiIH0sIC4uLl0AhQsdAIFRBgCGWQZET00AhjoK&s=default
+
+Code:
+title Fullstack 2020 - part0.5
+
+note over browser:
+A user types the URL and browser sends
+HTTP GET.
+end note
+
+browser->server: HTTP POST https://fullstack-exampleapp.herokuapp.com/spa
+server-->browser: response
+
+note over browser:
+Browser receives one index.html instead of
+getting individual HTML file for every page.
+end note
+
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/spa
+server-->browser: HTML-code
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.css
+server-->browser: main.css
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/spa.js
+server-->browser: spa.js
+
+note over browser:
+Browser starts executing js-code that 
+requests updated JSON data from server.
+end note
+
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/data.json
+server-->browser: [{ content: "A NOTE", date: "20XX-XX-XX" }, ...]
+
+note over browser:
+Browser updates the DOM.
+end note

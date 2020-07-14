@@ -1,0 +1,23 @@
+Link:
+https://www.websequencediagrams.com/cgi-bin/cdraw?lz=dGl0bGUgRnVsbHN0YWNrIDIwMjAgLSBwYXJ0MC42Cgpub3RlIG92ZXIgYnJvd3NlcjoKQSB1c2VyIHR5cGVzICJBIE5FVyBOT1RFIiB1c2luZyBodG1sIGlucHV0IGVsZW1lbnQKYW5kIGNsaWNrcyBzdWJtaXQgYnV0dG9uIHdoaWNoIGluaXRpYXRlcyB0aGUgCmN1c3RvbSBzZW5kLW1ldGhvZCAoACMGcHJldmVudHMgZGVmYXVsdCAKZnVuY3Rpb25pbmcgb2YgZm9ybSAvAF4HKS4gVGhlIAA8B3N0b3Jlcwp0aGUgbmV3IG1lc3NhZ2UgKG9uAIFTCCBlbmQgPSBzdGF0ZSBtYW5hZwCBOQUpCmJ1dCBhbHNvIG1ha2VzIEhUVFAgUE9TVCAoYW5kIGdldHRpbmcpLgplbmQgbm90ZQCCIhVUaGUgRE9NIHVwZACBZgUiaW1tZWRpYXRlbHkiIHdpdGhvdXQgaGF2aW5nIHRvIAp3YWl0IGZvciBzZXJ2ZXIgcmVzcG9uc2UgYW5kAIIkBQCBTQVkAIFCCApiZWNvbWVzIHZpc2libGUAgQMMAIM1By0-AEUGOgCBOAtodHRwczovL2YAg3sILWV4YW1wbGVhcHAuaGVyb2t1YXBwLmNvbS9zcGEKAIEGBi0tPgCEBwgAgQ0KKACCEwVjb2RlIDIwMSA9IGNyZWF0ZWQgLyBlcnJvcik&s=default
+
+Code:
+title Fullstack 2020 - part0.6
+
+note over browser:
+A user types "A NEW NOTE" using html input element
+and clicks submit button which initiates the 
+custom send-method (which prevents default 
+functioning of form / submit). The method stores
+the new message (on browser end = state management)
+but also makes HTTP POST (and getting).
+end note
+
+note over browser:
+The DOM updates "immediately" without having to 
+wait for server response and the stored message
+becomes visible.
+end note
+
+browser->server: HTTP POST https://fullstack-exampleapp.herokuapp.com/spa
+server-->browser: response (HTTP code 201 = created / error)
